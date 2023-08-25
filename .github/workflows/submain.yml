@@ -1,0 +1,23 @@
+name: runtime
+ 
+
+on: 
+  push:
+    branches:
+      - main
+
+
+jobs:
+     build:
+       runs-on: ubuntu-latest
+
+
+       steps:
+          - uses: actions/checkout@v2
+
+
+
+          - name: This is Cloud and DevOps
+            run: 
+               echo "This is gobisha" > ava.html
+               python -m http.server 8080
