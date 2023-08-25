@@ -1,0 +1,29 @@
+stages:
+
+- build
+
+- deploy
+
+build:
+
+stage: build
+
+image: maven:latest
+
+script:
+
+- mvn clean install
+
+deploy:
+
+stage: deploy
+
+image: openjdk:8-jre
+
+script:
+
+- cp target/your-application.war /path/to/tomcat/webapps/
+
+dependencies:
+
+- build
